@@ -30,4 +30,9 @@ in main template file youhave to add
     </script>
 and give your table id is "myTable"
 
-have to set new route and new method incontroller
+have to set new route and new method in controller
+
+resource
+https://yajrabox.com/docs/laravel-datatables/10.0/installation
+https://www.youtube.com/watch?v=LeuZaZxJ7PE
+https://www.youtube.com/watch?v=AwTiTrP3M7o&list=PLe30vg_FG4OTjUsNsjkGQF-Qco1HSgy13
