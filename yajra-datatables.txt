@@ -1,0 +1,33 @@
+laravel yajra datatables
+------------------------------------
+yajra install process
+
+composer require yajra/laravel-datatables:"^9.0"
+php artisan vendor:publish --tag=datatables
+
+
+in main template file youhave to add 
+ <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css">
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: '{{ route('admin.users.data') }}',
+                columns: [
+                    { data: 'name', name: 'name' },
+                    { data: 'email', name: 'email' },
+                    { data: 'actions', name: 'actions', orderable: false, searchable: false },
+                ]
+            });
+        });
+    </script>
+and give your table id is "myTable"
+
+have to set new route and new method incontroller
